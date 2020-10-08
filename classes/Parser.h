@@ -10,7 +10,7 @@
 
 #define FLOWERPOTARGUMENTS_PARSER_H
 
-namespace FlowerpotArguments {
+namespace Flowerpot {
     class Parser {
 
     public:

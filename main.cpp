@@ -2,7 +2,7 @@
 #include "library.h"
 
 int main(int count, char** vector) {
-    const FlowerpotArguments::Parser parser(count, vector);
+    const Flowerpot::Parser parser(count, vector);
     auto arguments = parser.toVector();
 
     std::cout << "Program name: " << parser.getProgramName() << std::endl;

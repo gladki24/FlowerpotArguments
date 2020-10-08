@@ -4,6 +4,7 @@
 
 #ifndef FLOWERPOTARGUMENTS_LIBRARY_H
 #include "classes/Parser.h"
+#include "enums/Style.h"
 #define FLOWERPOTARGUMENTS_LIBRARY_H
 
 

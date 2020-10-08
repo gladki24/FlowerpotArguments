@@ -4,7 +4,7 @@
 
 #include "Parser.h"
 
-namespace FlowerpotArguments {
+namespace Flowerpot {
     std::vector<std::string> Parser::ParseStringArrayToVector(const int &count, char **array) {
         std::vector<std::string> elements;
 
