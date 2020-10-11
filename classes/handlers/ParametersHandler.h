@@ -8,6 +8,7 @@
 #include <utility>
 #include <vector>
 #include <string>
+#include "../ParametersBuilder.h"
 
 #define FLOWERPOTARGUMENTS_PARAMETERSHANDLER_H
 
@@ -20,8 +21,7 @@ namespace Flowerpot {
         ParametersHandler() = delete;
         ParametersHandler(iterator& element, iterator nextElement);
         virtual ~ParametersHandler() = default;
-        virtual pair Handle() = 0;
-
+        virtual void Handle(ParametersBuilder& parameters) = 0;
     protected:
         iterator& element;
         iterator nextElement;

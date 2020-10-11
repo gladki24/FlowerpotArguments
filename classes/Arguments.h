@@ -9,6 +9,7 @@
 #include <list>
 #include <array>
 #include "handlers/ParametersHandlerFactory.h"
+#include "Parameters.h"
 
 
 #define FLOWERPOTARGUMENTS_ARGUMENTS_H
@@ -23,9 +24,9 @@ namespace Flowerpot {
         Arguments(Arguments&&) = default;
         Arguments& operator=(const Arguments&) = default;
 
-        std::map<std::string, std::string> ToMap(const std::vector<std::string>&) const;
-        std::map<std::string, std::string> ToMap(const std::list<std::string>&) const;
-        std::map<std::string, std::string> ToMap(char**, int) const;
+        Parameters ToMap(const std::vector<std::string>&) const;
+        Parameters ToMap(const std::list<std::string>&) const;
+        Parameters ToMap(char**, int) const;
 
     private:
         Style _style;

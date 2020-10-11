@@ -13,7 +13,7 @@ namespace Flowerpot {
     public:
         ParametersKeyValue(iterator& element, iterator next);
         ~ParametersKeyValue() override = default;
-        pair Handle() override;
+        void Handle(ParametersBuilder& parameters) override;
     };
 }
 

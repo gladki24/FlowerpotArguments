@@ -13,7 +13,7 @@ namespace Flowerpot {
     public:
         ParametersKey(iterator& element, iterator next);
         ~ParametersKey() override = default;
-        pair Handle() override;
+        void Handle(ParametersBuilder& parameters) override;
 
     private:
         static unsigned int UnspecifiedKeyCounter;

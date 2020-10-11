@@ -10,13 +10,11 @@
 
 namespace Flowerpot {
     class ParametersValue : public ParametersHandler {
+        friend class Parameters;
     public:
         ParametersValue(iterator& element, iterator next);
         ~ParametersValue() override = default;
-        pair Handle() override;
-
-    private:
-        static unsigned int UnspecifiedValueCounter;
+        void Handle(ParametersBuilder& parameters) override;
     };
 }
 

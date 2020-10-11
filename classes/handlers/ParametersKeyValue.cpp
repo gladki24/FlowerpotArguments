@@ -5,10 +5,8 @@
 #include "ParametersKeyValue.h"
 
 namespace Flowerpot {
-    pair ParametersKeyValue::Handle() {
-        pair pair(element->data(), nextElement->data());
-        element++;
-        return pair;
+    void ParametersKeyValue::Handle(ParametersBuilder& builder) {
+        builder.AddKeyValue(pair(element->data(), nextElement->data()));
     }
 
     ParametersKeyValue::ParametersKeyValue(iterator &element, iterator next) : ParametersHandler(element, next) { }
