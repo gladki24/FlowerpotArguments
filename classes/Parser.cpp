@@ -15,23 +15,28 @@ namespace Flowerpot {
         return elements;
     }
 
+
     Parser::Parser(int &count, char **array)
             : _programName(std::string(array[0])), _vector(ParseStringArrayToVector(count, array)) {
     }
 
-    int Parser::count() const {
+    Parser::Parser(const int &count, char **array) :
+            _programName(std::string(array[0])), _vector(ParseStringArrayToVector(count, array)) {
+    }
+
+    int Parser::Count() const {
         return _vector.size();
     }
 
-    const std::string &Parser::getProgramName() const {
+    const std::string &Parser::GetProgramName() const {
         return _programName;
     }
 
-    std::vector<std::string> Parser::toVector() const {
+    std::vector<std::string> Parser::ToVector() const {
         return _vector;
     }
 
-    std::list<std::string> Parser::toList() const {
+    std::list<std::string> Parser::ToList() const {
         return std::list<std::string>(_vector.begin(), _vector.end());
     }
 }

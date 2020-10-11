@@ -3,13 +3,8 @@
 
 int main(int count, char** vector) {
     const Flowerpot::Parser parser(count, vector);
-    auto arguments = parser.toVector();
-
-    std::cout << "Program name: " << parser.getProgramName() << std::endl;
-
-    for (const auto & argument : arguments) {
-        std::cout << argument << ", ";
-    }
+    const Flowerpot::Arguments arguments;
+    const auto params = arguments.ToMap(parser.ToVector());
 
     return 0;
 }

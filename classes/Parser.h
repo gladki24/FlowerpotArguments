@@ -16,14 +16,15 @@ namespace Flowerpot {
     public:
         Parser() = delete;
         Parser(int & count, char** array);
+        Parser(const int & count, char** array);
         ~Parser() = default;
         Parser(const Parser &) = default;
         Parser(Parser &&) = default;
-        int count() const;
-        const std::string& getProgramName() const;
-        std::list<std::string> toList() const;
-        std::vector<std::string> toVector() const;
-        static std::vector<std::string >ParseStringArrayToVector(const int& count, char** array);
+        int Count() const;
+        const std::string& GetProgramName() const;
+        std::list<std::string> ToList() const;
+        std::vector<std::string> ToVector() const;
+        static std::vector<std::string>ParseStringArrayToVector(const int& count, char** array);
 
 
     private:
