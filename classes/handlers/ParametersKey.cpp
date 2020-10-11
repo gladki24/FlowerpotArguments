@@ -5,8 +5,8 @@
 #include "ParametersKey.h"
 
 namespace Flowerpot {
-    pair ParametersKey::Handle() {
-        return pair(element->data(), std::to_string(UnspecifiedKeyCounter++));
+    void ParametersKey::Handle(ParametersBuilder& parameters) {
+        parameters.AddFlag(element->data());
     }
 
     ParametersKey::ParametersKey(iterator &element, iterator next) : ParametersHandler(element, next) { }
