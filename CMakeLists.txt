@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(LIB FlowerpotArguments)
 set(SPEC FlowerpotArgumentsTest)
 
-add_library(${LIB} library.h classes/Parser.cpp classes/Parser.h)
+add_library(${LIB} library.h classes/Parser.cpp classes/Parser.h enums/Style.h classes/Arguments.cpp classes/Arguments.h classes/handlers/ParametersHandler.cpp classes/handlers/ParametersHandler.h classes/handlers/ParametersHandlerFactory.cpp classes/handlers/ParametersHandlerFactory.h classes/handlers/ParametersKeyValue.cpp classes/handlers/ParametersKeyValue.h classes/handlers/ParametersKey.cpp classes/handlers/ParametersKey.h classes/handlers/ParametersValue.cpp classes/handlers/ParametersValue.h)
 add_executable(${SPEC} main.cpp)
 
 target_link_libraries(${SPEC} ${LIB})
