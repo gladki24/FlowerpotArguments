@@ -17,15 +17,20 @@ namespace Flowerpot {
     class ParametersHandlerFactory {
     public:
         ParametersHandlerFactory() = default;
+
         explicit ParametersHandlerFactory(Style style);
-        std::unique_ptr<ParametersHandler> create(vector_iterator& element, vector_iterator next) const;
+
+        std::unique_ptr<ParametersHandler>
+        create(vector_iterator &element, vector_iterator next, vector_iterator &end) const;
 
     private:
         Style _style;
 
-        bool _isKey(const std::string&) const;
-        bool _isValue(const std::string&) const;
-        bool _isValueAndKey(const std::string&) const; // TODO
+        bool _isKey(const std::string &) const;
+
+        bool _isValue(const std::string &) const;
+
+        bool _isValueAndKey(const std::string &) const; // TODO
         char _getKeyPrefix() const;
     };
 }

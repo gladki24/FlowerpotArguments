@@ -24,9 +24,9 @@ namespace Flowerpot {
         Arguments(Arguments&&) = default;
         Arguments& operator=(const Arguments&) = default;
 
-        Parameters ToMap(const std::vector<std::string>&) const;
-        Parameters ToMap(const std::list<std::string>&) const;
-        Parameters ToMap(char**, int) const;
+        Parameters ToParameters(const std::vector<std::string>&) const;
+        Parameters ToParameters(const std::list<std::string>&) const;
+        Parameters ToParameters(char**, int) const;
 
     private:
         Style _style;
