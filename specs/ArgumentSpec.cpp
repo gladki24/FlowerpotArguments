@@ -5,7 +5,7 @@
 #define CATCH_CONFIG_MAIN // provides main(); this line is required in only one .cpp file
 
 #include "./catch.h"
-#include "../library.h"
+#include "../FlowerpotArguments.h"
 
 TEST_CASE("Arguments", "[FlowerpotArgumentsSpecs][Arguments]") {
 
