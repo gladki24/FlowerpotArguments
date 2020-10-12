@@ -12,14 +12,16 @@ namespace Flowerpot {
 
     ParametersHandlerFactory::ParametersHandlerFactory(Style style) : _style(style) {}
 
-    std::unique_ptr<ParametersHandler> ParametersHandlerFactory::create(vector_iterator& element,
-                                                                        vector_iterator next) const {
+    std::unique_ptr<ParametersHandler> ParametersHandlerFactory::create(vector_iterator &element,
+                                                                        vector_iterator next,
+                                                                        vector_iterator &end
+    ) const {
 
         const auto elementData = element->data();
         const auto nextElementData = next->data();
 
         if (_isKey(elementData)) {
-            if (_isValue(nextElementData)) {
+            if (next != end && _isValue(nextElementData)) {
                 return ptr(new ParametersKeyValue(element, next));
             } else {
                 return ptr(new ParametersKey(element, next));
@@ -32,10 +34,13 @@ namespace Flowerpot {
     }
 
     char ParametersHandlerFactory::_getKeyPrefix() const {
-        switch(_style) {
-            case Style::POSIX: return '-';
-            case Style::Windows: return '/';
-            default: throw std::runtime_error("Invalid cmd parameters style");
+        switch (_style) {
+            case Style::POSIX:
+                return '-';
+            case Style::Windows:
+                return '/';
+            default:
+                throw std::runtime_error("Invalid cmd parameters style");
         }
     }
 

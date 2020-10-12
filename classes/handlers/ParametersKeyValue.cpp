@@ -7,6 +7,7 @@
 namespace Flowerpot {
     void ParametersKeyValue::Handle(ParametersBuilder& builder) {
         builder.AddKeyValue(pair(element->data(), nextElement->data()));
+        element++;
     }
 
     ParametersKeyValue::ParametersKeyValue(iterator &element, iterator next) : ParametersHandler(element, next) { }

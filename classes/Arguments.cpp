@@ -25,10 +25,11 @@ namespace Flowerpot {
 
     Parameters Arguments::ToParameters(const std::vector<std::string> &vector) const {
         ParametersBuilder builder;
+        vector_iterator vectorEnd = vector.end();
 
-        for (auto element = vector.begin(); element != vector.end(); element++) {
+        for (auto element = vector.begin(); element != vectorEnd; element++) {
             const ParametersHandlerFactory handlerFactory(_style);
-            const auto handler = handlerFactory.create(element, std::next(element));
+            const auto handler = handlerFactory.create(element, std::next(element), vectorEnd);
             handler->Handle(builder);
         }
 

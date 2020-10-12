@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
 project(FlowerpotArgumentsSpecs)
 
-add_executable(FlowerpotArgumentsSpecs ArgumentSpec.cpp)
+add_executable(FlowerpotArgumentsSpecs ArgumentSpec.cpp ParserSpec.cpp)
 target_link_libraries(FlowerpotArgumentsSpecs FlowerpotArguments)
